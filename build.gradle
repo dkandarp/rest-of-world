@@ -31,11 +31,6 @@ subprojects{
     targetCompatibility = 1.8
 
     dependencies {
-        compile ('org.springframework.boot:spring-boot-starter-jersey'){
-            exclude module: 'spring-boot-starter-tomcat'
-        }
-        compile 'org.springframework.boot:spring-boot-starter-undertow'
-        compile 'org.springframework.boot:spring-boot-starter-jetty'
 
         compile 'org.apache.commons:commons-lang3:3.0'
         compile 'org.codehaus.groovy:groovy-all:2.3.11'
