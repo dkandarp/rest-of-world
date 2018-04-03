@@ -1,0 +1,54 @@
+
+buildscript {
+    ext {
+        springBootVersion = '2.0.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+
+subprojects{
+    apply plugin: 'groovy'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://repo.spring.io/libs-milestone'
+        }
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compile ('org.springframework.boot:spring-boot-starter-jersey'){
+            exclude module: 'spring-boot-starter-tomcat'
+        }
+        compile 'org.springframework.boot:spring-boot-starter-undertow'
+        compile 'org.springframework.boot:spring-boot-starter-jetty'
+
+        compile 'org.apache.commons:commons-lang3:3.0'
+        compile 'org.codehaus.groovy:groovy-all:2.3.11'
+
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.M8"
+        }
+    }
+}
+
+
+
