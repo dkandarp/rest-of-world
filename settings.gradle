@@ -1,4 +1,5 @@
 rootProject.name = 'rest-of-world'
 include 'bookstore'
 //include 'reading'
+include 'commons'
 

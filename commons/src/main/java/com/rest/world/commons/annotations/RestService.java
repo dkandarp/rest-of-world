@@ -1,4 +1,4 @@
-package com.rest.world.bookstore.annotations;
+package com.rest.world.commons.annotations;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;

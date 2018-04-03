@@ -1,9 +1,9 @@
 package com.rest.world.bookstore.resources;
 
 
-import com.rest.world.bookstore.annotations.RestService;
 import com.rest.world.bookstore.models.Book;
 import com.rest.world.bookstore.services.BookService;
+import com.rest.world.commons.annotations.RestService;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;

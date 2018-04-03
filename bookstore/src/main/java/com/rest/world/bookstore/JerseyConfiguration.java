@@ -1,6 +1,6 @@
 package com.rest.world.bookstore;
 
-import com.rest.world.bookstore.annotations.RestService;
+import com.rest.world.commons.annotations.RestService;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
