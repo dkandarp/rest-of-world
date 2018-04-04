@@ -1,2 +1,16 @@
 server:
   port: 8082
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /admin
+      exposure:
+        include: info, health, metrics, conditions, env, httptrace, heapdump, threaddump
+
+  metrics:
+    web:
+      server:
+        auto-time-requests: true

@@ -1,13 +1,11 @@
+apply from: 'versions.gradle'
 
 buildscript {
-    ext {
-        springBootVersion = '2.0.0.RELEASE'
-    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
     }
 }
 
@@ -31,9 +29,7 @@ subprojects{
 
     dependencies {
 
-        compile 'org.apache.commons:commons-lang3:3.0'
         compile 'org.codehaus.groovy:groovy-all:2.3.11'
-        compile 'org.springframework:spring-context:5.0.4.RELEASE'
 
         testCompile group: 'junit', name: 'junit', version: '4.11'
     }

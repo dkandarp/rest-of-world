@@ -4,6 +4,7 @@ package com.rest.world.bookstore.resources;
 import com.rest.world.bookstore.models.Book;
 import com.rest.world.bookstore.services.BookService;
 import com.rest.world.commons.annotations.RestService;
+import io.micrometer.core.annotation.Timed;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -25,6 +26,7 @@ import static javax.ws.rs.core.Response.ok;
 @Path("/books")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Timed
 public class BookStore {
 
     private final BookService bookService;
@@ -33,33 +35,37 @@ public class BookStore {
     }
 
     @GET
-    @Produces("application/json")
+    @Timed
     public Collection<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
+    @Path("/{oid}")
     @GET
     @Produces("application/json")
-    @Path("/{oid}")
+    @Timed
     public Book getBook(@PathParam("oid") String oid) {
         return bookService.getBook(oid);
     }
 
     @POST
+    @Timed
     public Response addBook(Book book) {
         bookService.addBook(book);
         return created(URI.create("/" + book.getOid())).build();
     }
 
-    @PUT
     @Path("/{oid}")
+    @PUT
+    @Timed
     public Response updateBook(@PathParam("oid") String oid, Book book) {
         bookService.updateBook(oid, book);
         return Response.noContent().build();
     }
 
-    @DELETE
     @Path("/{oid}")
+    @DELETE
+    @Timed
     public Response deleteBook(@PathParam("oid") String oid) {
         bookService.deleteBook(oid);
         return ok().build();

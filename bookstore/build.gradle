@@ -8,10 +8,12 @@ bootJar {
 dependencies{
      compile project(":commons")
 
-    compile ('org.springframework.boot:spring-boot-starter-jersey'){
+    compile "org.apache.commons:commons-lang3:${versions.commons}"
+
+    compile ("org.springframework.boot:spring-boot-starter-jersey:${versions.springBoot}"){
         exclude module: 'spring-boot-starter-tomcat'
     }
-    compile 'org.springframework.boot:spring-boot-starter-undertow'
+
     runtime 'org.springframework.boot:spring-boot-starter-jetty'
 
 }
