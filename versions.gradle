@@ -1,6 +1,6 @@
 ext.versions = [
         springBoot: '2.0.0.RELEASE',
         springCore: '5.0.4.RELEASE',
-        commons: '3.0',
-        microMeter:'1.0.2'
+        commons   : '3.0',
+        microMeter: '1.0.2'
 ]

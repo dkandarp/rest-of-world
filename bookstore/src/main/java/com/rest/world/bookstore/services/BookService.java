@@ -30,7 +30,7 @@ public class BookService {
     }
 
     public void addBook(Book book) {
-        if (isNull(book.getOid())){
+        if (isNull(book.getOid())) {
             book.setOid(randomUUID().toString());
         }
 

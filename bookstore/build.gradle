@@ -5,12 +5,12 @@ bootJar {
     version = '0.0.1-SNAPSHOT'
 }
 
-dependencies{
-     compile project(":commons")
+dependencies {
+    compile project(":commons")
 
     compile "org.apache.commons:commons-lang3:${versions.commons}"
 
-    compile ("org.springframework.boot:spring-boot-starter-jersey:${versions.springBoot}"){
+    compile("org.springframework.boot:spring-boot-starter-jersey:${versions.springBoot}") {
         exclude module: 'spring-boot-starter-tomcat'
     }
 

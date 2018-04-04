@@ -1,6 +1,6 @@
-dependencies{
+dependencies {
     compile "org.springframework:spring-context:${versions.springCore}"
-    compile ("org.springframework.boot:spring-boot-starter-jersey:${versions.springBoot}"){
+    compile("org.springframework.boot:spring-boot-starter-jersey:${versions.springBoot}") {
         exclude module: 'spring-boot-starter-tomcat'
     }
     runtime "org.springframework.boot:spring-boot-starter-actuator:${versions.springBoot}"

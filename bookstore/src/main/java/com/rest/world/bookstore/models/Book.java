@@ -17,12 +17,24 @@ public class Book {
         return oid;
     }
 
+    public void setOid(String oid) {
+        this.oid = oid;
+    }
+
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getAuthor() {
         return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public Category getCategory() {
@@ -31,18 +43,6 @@ public class Book {
 
     public void setCategory(String category) {
         this.category = Category.valueOf(category.toUpperCase());
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setOid(String oid) {
-        this.oid = oid;
     }
 
     @Override

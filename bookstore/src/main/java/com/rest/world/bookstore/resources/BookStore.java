@@ -30,7 +30,8 @@ import static javax.ws.rs.core.Response.ok;
 public class BookStore {
 
     private final BookService bookService;
-    public BookStore(BookService bookService){
+
+    public BookStore(BookService bookService) {
         this.bookService = bookService;
     }
 
