@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.Collection;
 
+import static java.net.URI.create;
 import static javax.ws.rs.core.Response.created;
 import static javax.ws.rs.core.Response.ok;
 
@@ -53,7 +54,9 @@ public class BookStore {
     @Timed
     public Response addBook(Book book) {
         bookService.addBook(book);
-        return created(URI.create("/" + book.getOid())).build();
+        return created(create(book.getOid()))
+                .entity(book)
+                .build();
     }
 
     @Path("/{oid}")
