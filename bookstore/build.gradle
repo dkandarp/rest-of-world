@@ -14,7 +14,8 @@ dependencies {
         exclude module: 'spring-boot-starter-tomcat'
     }
 
-    runtime 'org.springframework.boot:spring-boot-starter-jetty'
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
 
     testCompile "org.springframework.boot:spring-boot-starter-test:${versions.springBoot}"
+
 }
